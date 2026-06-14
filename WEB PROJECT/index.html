@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Artisan Showcase — Handmade & Local Crafts</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- ANNOUNCEMENT BAR -->
+<div class="announce-bar">
+  <div class="announce-inner">
+    <a href="#">🏺 ARTISAN SHOWCASE</a>
+    <span>|</span>
+    <a href="#">PUBLICATIONS</a>
+    <span>|</span>
+    <a href="#">MAKERS</a>
+    <span>|</span>
+    <a href="#">FOUNDATION</a>
+  </div>
+  <p class="announce-tagline">A community of artisans who <strong>inspire</strong>, who <strong>share</strong>, who <strong>support</strong>.</p>
+</div>
+
+<!-- SLIDE MENU -->
+<div class="menu-overlay" id="menuOverlay"></div>
+<nav class="slide-menu" id="slideMenu">
+  <button class="menu-close" id="menuClose">✕</button>
+  <ul class="smenu-list">
+    <li><a href="#" class="smenu-link" data-section="hero">HOME</a></li>
+    <li><a href="#" class="smenu-link" data-section="about-section">ABOUT</a></li>
+    <li class="smenu-has-sub">
+      <span class="smenu-link">SHOP <span class="smenu-arrow">›</span></span>
+      <ul class="smenu-sub">
+        <li><a href="#" data-filter="Pottery">Pottery & Ceramics</a></li>
+        <li><a href="#" data-filter="Textile">Textiles & Weaves</a></li>
+        <li><a href="#" data-filter="Jewelry">Jewelry</a></li>
+        <li><a href="#" data-filter="Woodwork">Woodwork & Carving</a></li>
+        <li><a href="#" data-filter="Basketry">Basketry</a></li>
+        <li><a href="#" data-filter="Calligraphy">Calligraphy</a></li>
+      </ul>
+    </li>
+    <li><a href="#" class="smenu-link" data-section="makers-section">MAKERS</a></li>
+    <li><a href="#" class="smenu-link" data-section="contact-section">CONTACT</a></li>
+  </ul>
+  <div class="smenu-footer">
+    <a href="login.html" class="smenu-login">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+      LOGIN
+    </a>
+  </div>
+</nav>
+
+<!-- TOPNAV -->
+<header class="topnav" id="topnav">
+  <button class="nav-hamburger" id="menuOpen">
+    <span></span><span></span><span></span>
+  </button>
+  <a href="#" class="nav-logo">
+    <span class="logo-name">AS <span class="logo-sep">|</span> SHOP</span>
+    <span class="logo-sub">THE ARTISAN SHOWCASE MARKETPLACE</span>
+  </a>
+  <div class="nav-right">
+    <button class="nav-icon-btn" id="searchToggle">
+      <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.35-4.35"/></svg>
+    </button>
+    <button class="nav-icon-btn">
+      <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+    </button>
+  </div>
+</header>
+
+<!-- Search bar -->
+<div class="search-bar-drop" id="searchBarDrop">
+  <input type="text" id="searchInput" placeholder="Search artisans, crafts, cities…" />
+  <button id="searchClose">✕</button>
+</div>
+
+<!-- HERO -->
+<section class="hero-full" id="hero">
+  <div class="hero-img-wrap">
+    <img src="https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=1400&q=80" alt="Artisan pottery" />
+  </div>
+  <div class="hero-body">
+    <p class="hero-kicker">HANDCRAFTED WITH LOVE</p>
+    <h1 class="hero-title">YOUR<br><em>ARTISAN</em><br>STORY</h1>
+    <p class="hero-desc">Step into a world of bright inspiration. Discover a thoughtfully curated collection of artisan treasures, celebrating the independent makers who bring beautiful ideas to life.</p>
+    <div class="hero-ctas">
+      <button class="cta-teal" data-scroll="makers-section">VIEW ALL MAKERS</button>
+      <button class="cta-teal" data-scroll="products-section">VIEW SHOP</button>
+    </div>
+  </div>
+  <button class="hero-down" data-scroll="products-section">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+  </button>
+</section>
+
+<!-- FEATURED PRODUCTS -->
+<section class="sec-products" id="products-section">
+  <div class="sec-label">collection</div>
+  <h2 class="sec-title">FEATURED PRODUCTS</h2>
+  <p class="sec-desc">Explore handcrafted pieces made by talented artisans from across Pakistan.</p>
+  <div class="filter-strip">
+    <select id="filterCategory" class="fsel">
+      <option value="">All Categories</option>
+      <option value="Pottery">Pottery</option>
+      <option value="Textile">Textile</option>
+      <option value="Woodwork">Woodwork</option>
+      <option value="Jewelry">Jewelry</option>
+      <option value="Basketry">Basketry</option>
+      <option value="Calligraphy">Calligraphy</option>
+    </select>
+    <select id="filterLocation" class="fsel">
+      <option value="">All Cities</option>
+      <option value="Lahore">Lahore</option>
+      <option value="Karachi">Karachi</option>
+      <option value="Peshawar">Peshawar</option>
+      <option value="Multan">Multan</option>
+      <option value="Quetta">Quetta</option>
+      <option value="Faisalabad">Faisalabad</option>
+      <option value="Hyderabad">Hyderabad</option>
+      <option value="Chiniot">Chiniot</option>
+    </select>
+    <select id="filterStatus" class="fsel">
+      <option value="">All Status</option>
+      <option value="active">Active</option>
+      <option value="inactive">Inactive</option>
+    </select>
+  </div>
+  <div class="products-grid" id="artisans-grid" role="list" aria-live="polite"></div>
+  <div class="sec-cta-row">
+    <button class="cta-outline" id="listCraftBtn">+ LIST YOUR CRAFT</button>
+  </div>
+</section>
+
+<!-- COLLECTIONS GRID -->
+<section class="sec-collections" id="collections-section">
+  <div class="sec-label">collections</div>
+  <h2 class="sec-title">COLLECTIONS EVERYONE'S TALKING ABOUT</h2>
+  <p class="sec-desc">Discover the most buzz-worthy pieces everyone's loving right now.</p>
+  <div class="collections-grid">
+    <div class="col-card col-tall">
+      <img src="https://images.unsplash.com/photo-1577375729152-4c8b5fcda381?w=800&q=80" alt="Pottery" />
+      <div class="col-info">
+        <h3>POTTERY &amp; CERAMICS</h3>
+        <button class="cta-teal-sm" data-filter="Pottery">EXPLORE PRODUCTS</button>
+      </div>
+    </div>
+    <div class="col-card">
+      <img src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=600&q=80" alt="Textile" />
+      <div class="col-info">
+        <h3>TEXTILES &amp; WEAVES</h3>
+        <button class="cta-teal-sm" data-filter="Textile">EXPLORE PRODUCTS</button>
+      </div>
+    </div>
+    <div class="col-card">
+      <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=600&q=80" alt="Jewelry" />
+      <div class="col-info">
+        <h3>JEWELRY &amp; ORNAMENTS</h3>
+        <button class="cta-teal-sm" data-filter="Jewelry">EXPLORE PRODUCTS</button>
+      </div>
+    </div>
+    <div class="col-card">
+      <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&q=80" alt="Woodwork" />
+      <div class="col-info">
+        <h3>WOODWORK &amp; CARVING</h3>
+        <button class="cta-teal-sm" data-filter="Woodwork">EXPLORE PRODUCTS</button>
+      </div>
+    </div>
+    <div class="col-card">
+      <img src="https://images.unsplash.com/photo-1604719312566-8912e9227c6a?w=600&q=80" alt="Basketry" />
+      <div class="col-info">
+        <h3>BASKETRY</h3>
+        <button class="cta-teal-sm" data-filter="Basketry">EXPLORE PRODUCTS</button>
+      </div>
+    </div>
+    <div class="col-card">
+      <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&q=80" alt="Calligraphy" />
+      <div class="col-info">
+        <h3>CALLIGRAPHY</h3>
+        <button class="cta-teal-sm" data-filter="Calligraphy">EXPLORE PRODUCTS</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DISCOVER BANNER -->
+<section class="sec-discover">
+  <div class="discover-inner">
+    <div class="discover-text">
+      <div class="sec-label" style="color:rgba(255,255,255,0.6)">discover</div>
+      <h2 class="sec-title" style="color:#fff;">Explore the Art Behind<br>Every Collection</h2>
+      <p style="color:rgba(255,255,255,0.8);font-weight:300;margin-bottom:2rem;">Each collection is a reflection of its maker — inspired by tradition, shaped by imagination, and crafted with care.</p>
+      <button class="cta-white" data-scroll="makers-section">MEET THE MAKERS</button>
+    </div>
+    <div class="discover-img">
+      <img src="https://images.unsplash.com/photo-1452860606245-08befc0ff44b?w=700&q=80" alt="Artisan at work" />
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="sec-about" id="about-section">
+  <div class="about-grid">
+    <div class="about-imgblock">
+      <img src="https://images.unsplash.com/photo-1586380951230-e6703d9f6833?w=700&q=80" alt="Artisan work" />
+    </div>
+    <div class="about-textblock">
+      <div class="sec-label">what artisans create</div>
+      <h2 class="sec-title">We celebrate not only what's made — <em>but why it's made.</em></h2>
+      <p>From clay and thread to wood and camera, each work tells the story of an artisan who dared to create something from their soul.</p>
+    </div>
+    <div class="about-textblock about-textblock--right">
+      <div class="sec-label">a space for makers who inspire</div>
+      <h2 class="sec-title" style="font-size:1.6rem;">A Community of Artisans Who <em>Inspire</em>, Share &amp; Support</h2>
+      <button class="cta-outline" id="joinBtn">JOIN COMMUNITY</button>
+    </div>
+    <div class="about-imgblock">
+      <img src="https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=700&q=80" alt="Artisan showcase" />
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED MAKERS -->
+<section class="sec-makers" id="makers-section">
+  <div class="makers-list">
+    <div class="maker-card">
+      <div class="maker-img">
+        <img src="https://images.unsplash.com/photo-1604719312566-8912e9227c6a?w=900&q=80" alt="Fatima Malik" />
+        <span class="maker-label">FEATURED ARTISAN</span>
+      </div>
+      <div class="maker-info">
+        <h3>Fatima Handcrafts</h3>
+        <p>Founded by potter Fatima Malik, her studio is rooted in Multan's centuries-old blue pottery tradition. Blending mineral dyes with handthrown forms, her work celebrates slow making and everyday beauty.</p>
+        <button class="cta-outline maker-btn" data-filter="Pottery">MEET THE MAKER</button>
+      </div>
+    </div>
+    <div class="maker-card maker-card--reverse">
+      <div class="maker-img">
+        <img src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=900&q=80" alt="Zara Hussain" />
+        <span class="maker-label">FEATURED ARTISAN</span>
+      </div>
+      <div class="maker-info">
+        <h3>Zara Weaves</h3>
+        <p>Founded by weaver Zara Hussain, her Faisalabad studio brings a fresh approach to traditional ajrak and khaddar fabric using century-old techniques passed down through generations.</p>
+        <button class="cta-outline maker-btn" data-filter="Textile">MEET THE MAKER</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BADGES -->
+<section class="sec-trust">
+  <div class="trust-grid">
+    <div class="trust-item">
+      <span class="trust-icon">🔒</span>
+      <strong>Secure Payment</strong>
+      <p>Transactions with security guarantee</p>
+    </div>
+    <div class="trust-item">
+      <span class="trust-icon">↩️</span>
+      <strong>Easy Returns</strong>
+      <p>Within 14 days of purchase date</p>
+    </div>
+    <div class="trust-item">
+      <span class="trust-icon">🌟</span>
+      <strong>Support Local Artisans</strong>
+      <p>Every purchase supports a real Pakistani maker</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="sec-contact" id="contact-section">
+  <div class="sec-label">get in touch</div>
+  <h2 class="sec-title">CONTACT US</h2>
+  <form class="contact-form" id="contactForm" novalidate>
+    <div class="form-group" id="cgrp-name">
+      <label for="c-name">Name</label>
+      <input type="text" id="c-name" placeholder="Your name" />
+      <span class="form-error">Please enter your name.</span>
+    </div>
+    <div class="form-group" id="cgrp-email">
+      <label for="c-email">Email</label>
+      <input type="email" id="c-email" placeholder="your@email.com" />
+      <span class="form-error">Please enter a valid email.</span>
+    </div>
+    <div class="form-group" id="cgrp-msg">
+      <label for="c-msg">Message</label>
+      <textarea id="c-msg" rows="4" placeholder="Your message…"></textarea>
+      <span class="form-error">Please write a message.</span>
+    </div>
+    <button type="submit" class="cta-teal cta-full">SEND MESSAGE</button>
+  </form>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="sec-newsletter">
+  <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=200&q=80" alt="Logo" class="nl-logo" />
+  <h3>Stay Inspired</h3>
+  <p>Subscribe for new makers, collections and stories.</p>
+  <form class="nl-form" id="nlForm">
+    <input type="email" id="nl-email" placeholder="E-mail" />
+    <button type="submit">SUBSCRIBE</button>
+  </form>
+  <small>By subscribing you agree to our Privacy Policy.</small>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-top">
+    <div class="footer-col">
+      <h4>Helpful Links</h4>
+      <a href="#">About Us</a>
+      <a href="#">Artisans</a>
+      <a href="#">Shipping Policy</a>
+      <a href="#">Refund Policy</a>
+      <a href="#">Privacy Policy</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contact Links</h4>
+      <a href="#contact-section">Contact Us</a>
+      <a href="#" id="footerJoin">Join Community</a>
+      <a href="admin.html">Admin Panel</a>
+      <a href="login.html">Login / Signup</a>
+    </div>
+    <div class="footer-col">
+      <h4>Follow Us</h4>
+      <a href="#">Facebook</a>
+      <a href="#">Instagram</a>
+      <a href="#">Pinterest</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>Copyright ©️ 2026 Artisan Showcase™️. All rights reserved. · Web Technologies SP26</p>
+  </div>
+</footer>
+
+<!-- ADD ARTISAN MODAL -->
+<div class="modal-overlay" id="addModal" role="dialog" aria-modal="true">
+  <div class="modal">
+    <button class="modal-x" id="closeModal">✕</button>
+    <h2>List Your Craft</h2>
+    <form id="addForm" novalidate>
+      <div class="form-group" id="grp-name">
+        <label for="inp-name">Business / Craft Name *</label>
+        <input type="text" id="inp-name" placeholder="e.g. Fatima Handcrafts" />
+        <span class="form-error">Please enter a business name.</span>
+      </div>
+      <div class="form-group" id="grp-owner">
+        <label for="inp-owner">Owner Name *</label>
+        <input type="text" id="inp-owner" placeholder="e.g. Fatima Malik" />
+        <span class="form-error">Please enter the owner's name.</span>
+      </div>
+      <div class="form-row">
+        <div class="form-group" id="grp-category">
+          <label for="inp-category">Category *</label>
+          <select id="inp-category">
+            <option value="">Select…</option>
+            <option>Pottery</option><option>Textile</option>
+            <option>Woodwork</option><option>Jewelry</option>
+            <option>Basketry</option><option>Calligraphy</option><option>Other</option>
+          </select>
+          <span class="form-error">Please select a category.</span>
+        </div>
+        <div class="form-group" id="grp-location">
+          <label for="inp-location">City *</label>
+          <input type="text" id="inp-location" placeholder="e.g. Lahore" />
+          <span class="form-error">Please enter your city.</span>
+        </div>
+      </div>
+      <div class="form-group" id="grp-description">
+        <label for="inp-description">Description *</label>
+        <textarea id="inp-description" placeholder="Describe your craft…"></textarea>
+        <span class="form-error">Min 20 characters required.</span>
+      </div>
+      <div class="form-row">
+        <div class="form-group" id="grp-price">
+          <label for="inp-price">Price (PKR) *</label>
+          <input type="number" id="inp-price" placeholder="1500" min="1" />
+          <span class="form-error">Valid price required.</span>
+        </div>
+        <div class="form-group" id="grp-stock">
+          <label for="inp-stock">Stock *</label>
+          <input type="number" id="inp-stock" placeholder="10" min="0" />
+          <span class="form-error">Stock required.</span>
+        </div>
+      </div>
+      <div class="form-group" id="grp-image">
+        <label for="inp-image">Image URL (optional)</label>
+        <input type="url" id="inp-image" placeholder="https://…" />
+        <span class="form-error">Valid URL required.</span>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="cta-outline" id="cancelModal">Cancel</button>
+        <button type="submit" class="cta-teal" style="flex:1;justify-content:center;">SUBMIT LISTING</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div id="toast" role="status" aria-live="polite"></div>
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login — Artisan Showcase</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,700;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body class="login-page">
+<div class="login-wrap">
+
+  
+  <div class="login-left">
+    <div class="login-left-inner">
+      <div class="login-brand">
+        <span class="brand-icon">🏺</span>
+        <h1>Artisan<br>Showcase</h1>
+      </div>
+      <p class="login-tagline">Discover handmade treasures from talented Pakistani craftspeople — pottery, textiles, jewellery, woodwork & more.</p>
+      <div class="login-features">
+        <div class="lf-item"><span>🪴</span> Browse local artisans</div>
+        <div class="lf-item"><span>✦</span> List your own craft</div>
+        <div class="lf-item"><span>⭐</span> Support local talent</div>
+      </div>
+    </div>
+  </div>
+
+ 
+  <div class="login-right">
+    <div class="login-box">
+      <h2 class="login-title">Welcome Back</h2>
+      <p class="login-sub">Sign in to continue to Artisan Showcase</p>
+
+      <div class="auth-tabs">
+        <button class="auth-tab active" id="tabLogin">LOGIN</button>
+        <button class="auth-tab" id="tabSignup">SIGN UP</button>
+      </div>
+
+      <button class="btn-google" id="googleBtn">
+        <svg width="18" height="18" viewBox="0 0 48 48">
+          <path fill="#FFC107" d="M43.6 20H24v8h11.3C33.7 32.8 29.3 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.1 7.9 2.9l5.7-5.7C34.1 6.5 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20c11 0 19.7-8 19.7-20 0-1.3-.1-2.7-.1-4z"/>
+          <path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.5 16 19 13 24 13c3.1 0 5.8 1.1 7.9 2.9l5.7-5.7C34.1 6.5 29.3 4 24 4 16.2 4 9.5 8.4 6.3 14.7z"/>
+          <path fill="#4CAF50" d="M24 44c5.2 0 9.9-1.9 13.5-5l-6.2-5.2C29.4 35.5 26.8 36 24 36c-5.2 0-9.7-3.2-11.3-8H6.3C9.5 35.5 16.2 44 24 44z"/>
+          <path fill="#1976D2" d="M43.6 20H24v8h11.3c-.8 2.2-2.3 4.1-4.1 5.4l6.2 5.2C41 35.1 44 30 44 24c0-1.3-.1-2.7-.4-4z"/>
+        </svg>
+        CONTINUE WITH GOOGLE
+      </button>
+
+      <div class="divider"><span>or</span></div>
+
+      <form id="loginForm" novalidate>
+        <div class="form-group" id="lgrp-email">
+          <label for="lg-email">Email Address</label>
+          <input type="email" id="lg-email" placeholder="you@example.com" autocomplete="email"/>
+          <span class="form-error">Please enter a valid email.</span>
+        </div>
+        <div class="form-group" id="lgrp-pwd">
+          <label for="lg-pwd">
+            Password
+            <a href="#" class="forgot-link" id="forgotBtn">Forgot password?</a>
+          </label>
+          <div class="input-eye-wrap">
+            <input type="password" id="lg-pwd" placeholder="Enter your password" autocomplete="current-password"/>
+            <button type="button" class="eye-btn" id="eyeLogin">👁</button>
+          </div>
+          <span class="form-error">Password must be at least 6 characters.</span>
+        </div>
+        <button type="submit" class="cta-teal cta-full btn-full-login">SIGN IN</button>
+      </form>
+
+   
+      <form id="signupForm" novalidate style="display:none;">
+        <div class="form-group" id="sgrp-name">
+          <label for="sg-name">Full Name</label>
+          <input type="text" id="sg-name" placeholder="e.g. Fatima Malik"/>
+          <span class="form-error">Please enter your name.</span>
+        </div>
+        <div class="form-group" id="sgrp-email">
+          <label for="sg-email">Email Address</label>
+          <input type="email" id="sg-email" placeholder="you@example.com"/>
+          <span class="form-error">Please enter a valid email.</span>
+        </div>
+        <div class="form-group" id="sgrp-pwd">
+          <label for="sg-pwd">Password</label>
+          <div class="input-eye-wrap">
+            <input type="password" id="sg-pwd" placeholder="Min 6 characters"/>
+            <button type="button" class="eye-btn" id="eyeSignup">👁</button>
+          </div>
+          <span class="form-error">Password must be at least 6 characters.</span>
+        </div>
+        <div class="form-group" id="sgrp-confirm">
+          <label for="sg-confirm">Confirm Password</label>
+          <input type="password" id="sg-confirm" placeholder="Repeat password"/>
+          <span class="form-error">Passwords do not match.</span>
+        </div>
+        <button type="submit" class="cta-teal cta-full btn-full-login">CREATE ACCOUNT</button>
+      </form>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="modal-overlay" id="forgotModal">
+  <div class="modal" style="max-width:400px;">
+    <button class="modal-x" id="closeForgot">✕</button>
+    <h2>Reset Password</h2>
+    <p style="color:#666;font-size:0.85rem;margin-bottom:1.5rem;">Enter your email and we'll send you a reset link.</p>
+    <form id="forgotForm" novalidate>
+      <div class="form-group" id="fgrp-email">
+        <label for="fg-email">Email Address</label>
+        <input type="email" id="fg-email" placeholder="you@example.com"/>
+        <span class="form-error">Valid email required.</span>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="cta-outline" id="cancelForgot">Cancel</button>
+        <button type="submit" class="cta-teal" style="flex:1;justify-content:center;">SEND LINK</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div id="toast"></div>
+
+<script>
+  const GOOGLE_CLIENT_ID = 'YOUR_GOOGLE_CLIENT_ID.apps.googleusercontent.com';
+
+  document.getElementById('tabLogin').addEventListener('click', () => {
+    document.getElementById('tabLogin').classList.add('active');
+    document.getElementById('tabSignup').classList.remove('active');
+    document.getElementById('loginForm').style.display  = 'block';
+    document.getElementById('signupForm').style.display = 'none';
+  });
+  document.getElementById('tabSignup').addEventListener('click', () => {
+    document.getElementById('tabSignup').classList.add('active');
+    document.getElementById('tabLogin').classList.remove('active');
+    document.getElementById('signupForm').style.display = 'block';
+    document.getElementById('loginForm').style.display  = 'none';
+  });
+
+  document.getElementById('eyeLogin').addEventListener('click', () => {
+    const i = document.getElementById('lg-pwd');
+    i.type = i.type === 'password' ? 'text' : 'password';
+  });
+  document.getElementById('eyeSignup').addEventListener('click', () => {
+    const i = document.getElementById('sg-pwd');
+    i.type = i.type === 'password' ? 'text' : 'password';
+  });
+
+  function sv(id, ok) {
+    document.getElementById(id).classList.toggle('invalid', !ok);
+    return ok;
+  }
+
+  document.getElementById('loginForm').addEventListener('submit', e => {
+    e.preventDefault();
+    const email = document.getElementById('lg-email').value.trim();
+    const pwd   = document.getElementById('lg-pwd').value;
+    let ok = true;
+    ok = sv('lgrp-email', /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) && ok;
+    ok = sv('lgrp-pwd',   pwd.length >= 6) && ok;
+    if (!ok) return;
+    localStorage.setItem('artisan_user', JSON.stringify({ name: email.split('@')[0], email, method: 'email' }));
+    showToast('Logged in! Redirecting…');
+    setTimeout(() => window.location.href = 'index.html', 1200);
+  });
+
+  document.getElementById('signupForm').addEventListener('submit', e => {
+    e.preventDefault();
+    const name    = document.getElementById('sg-name').value.trim();
+    const email   = document.getElementById('sg-email').value.trim();
+    const pwd     = document.getElementById('sg-pwd').value;
+    const confirm = document.getElementById('sg-confirm').value;
+    let ok = true;
+    ok = sv('sgrp-name',    name.length >= 2) && ok;
+    ok = sv('sgrp-email',   /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) && ok;
+    ok = sv('sgrp-pwd',     pwd.length >= 6)  && ok;
+    ok = sv('sgrp-confirm', pwd === confirm)  && ok;
+    if (!ok) return;
+    localStorage.setItem('artisan_user', JSON.stringify({ name, email, method: 'email' }));
+    showToast(' Account created! Redirecting…');
+    setTimeout(() => window.location.href = 'index.html', 1200);
+  });
+
+  document.getElementById('forgotBtn').addEventListener('click', e => {
+    e.preventDefault();
+    document.getElementById('forgotModal').classList.add('open');
+  });
+  document.getElementById('closeForgot').addEventListener('click', () => document.getElementById('forgotModal').classList.remove('open'));
+  document.getElementById('cancelForgot').addEventListener('click', () => document.getElementById('forgotModal').classList.remove('open'));
+  document.getElementById('forgotForm').addEventListener('submit', e => {
+    e.preventDefault();
+    const email = document.getElementById('fg-email').value.trim();
+    if (!sv('fgrp-email', /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))) return;
+    document.getElementById('forgotModal').classList.remove('open');
+    showToast('Reset link sent to ' + email);
+  });
+
+  document.getElementById('googleBtn').addEventListener('click', () => {
+    if (GOOGLE_CLIENT_ID.includes('YOUR_GOOGLE')) {
+      showToast('⚠️ Add your Google Client ID to enable Google login', true);
+      return;
+    }
+    const p = new URLSearchParams({
+      client_id: GOOGLE_CLIENT_ID,
+      redirect_uri: window.location.origin + '/index.html',
+      response_type: 'token', scope: 'email profile', prompt: 'select_account'
+    });
+    window.location.href = 'https://accounts.google.com/o/oauth2/v2/auth?' + p;
+  });
+
+  const hash = new URLSearchParams(window.location.hash.slice(1));
+  if (hash.get('access_token')) {
+    fetch('https://www.googleapis.com/oauth2/v3/userinfo', {
+      headers: { Authorization: 'Bearer ' + hash.get('access_token') }
+    }).then(r => r.json()).then(u => {
+      localStorage.setItem('artisan_user', JSON.stringify({ name: u.name, email: u.email, photo: u.picture, method: 'google' }));
+      window.location.href = 'index.html';
+    });
+  }
+
+  let tt;
+  function showToast(msg, isError = false) {
+    const t = document.getElementById('toast');
+    t.textContent = msg;
+    t.style.background = isError ? '#c0392b' : '#1a1a1a';
+    t.style.display = 'block';
+    clearTimeout(tt);
+    tt = setTimeout(() => t.style.display = 'none', 3500);
+  }
+</script>
+</body>
+</html>
